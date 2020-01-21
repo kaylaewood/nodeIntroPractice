@@ -32,12 +32,12 @@ server.on('request', (request, response) => {
 
  const getAllMessages = response => {
   response.writeHead(200, { 'Content-Type': 'text/plain' });
-  response.write(`${messages}`);
+  response.write(JSON.stringify(messages));
   response.end();
 };
 
 const addMessage = (newMessage, response) => {
   response.writeHead(201, { 'Content-Type': 'text/plain' });
-  response.write(`${newMessage}`);
+  response.write(JSON.stringify(newMessage));
   response.end();
 }
